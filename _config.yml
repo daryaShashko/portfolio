@@ -8,6 +8,17 @@ url: "http://example.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
+
+avatar: travitar.jpg
+blurb:  <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</strong> A alias, aperiam dignissimos
+                   dolore itaque nam nisi
+                   placeat quasi qui quis recusandae, reprehenderit similique! Consequatur dolorem fugiat, porro recusandae
+                   repellendus tempore.
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae debitis eligendi error facere
+                   fugiat id iusto magnam magni nesciunt, nihil nobis obcaecati officiis quas, similique, sint veritatis vero
+                   voluptatem!
+               </p>
+
 # Build settings
 markdown: kramdown
 theme: minima

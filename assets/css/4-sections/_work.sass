@@ -1,0 +1,114 @@
+.alt-section
+  background: $bgcolor
+  padding-bottom: 100px
+
+.section-work
+  overflow-x: hidden
+
+.work-belt
+  width: 200%
+  position: relative
+  left: 0%
+  +transition(all 0.8s)
+
+  .thumb-wrap, .work-wrap
+    width: 50%
+    float: left
+
+.thumb-container
+  max-width: 960px
+  margin: 0 auto
+  +clearfix
+
+  .thumb-unit
+    display: block
+    width: 25%
+    float: left
+    position: relative
+    padding-top: 18%
+    overflow: hidden
+    background:
+      position: center center
+      repeat: no-repeat
+      size: cover
+    +perspective(300)
+    cursor: pointer
+
+    @media screen and (max-width: 760px)
+      width: 50%
+      padding-top: 26%
+
+    .thumb-overlay
+      +position(absolute, -50% 0px null 0px)
+      height: 100%
+      background: fade-out($accent, 0.1)
+      text-align: center
+      +transition(.5s)
+      +display(flex)
+      +align-items(center)
+      +justify-content(space-around)
+      +transform(rotateX(90deg))
+      +transform-origin(center bottom)
+      opacity: 0
+
+      strong
+        display: block
+        padding: 0 20px
+        color: white
+        font-weight: 300
+        text-transform: uppercase
+        font-size: 24px
+        line-height: 1.2
+
+    &:hover .thumb-overlay
+      +position(absolute, 0% 0px null 0px)
+      +transform(rotateX(0deg))
+      opacity: 1
+
+    .zoom-icon
+      fill: white
+
+.work-container
+  max-width: 600px
+  margin: 0 auto
+  position: relative
+  display: none
+
+  h4
+    color: $accent
+    font-weight: 300
+    text-transform: uppercase
+    font-size: 24px
+    line-height: 1.2
+    margin: 0 0 20px
+
+
+  img
+    max-width: 100%
+    margin-bottom: 20px
+
+  .work-return
+    +size(40px)
+    cursor: pointer
+    opacity: 0.5
+    +position(absolute, -4px null null -60px)
+
+
+    svg
+      +size(40px)
+
+    path
+      fill: rgba(0,0,0,.4)
+
+    &:hover
+      opacity: 1
+
+@media (max-width: 740px)
+  .work-container
+
+    .work-return
+      left: 0
+
+    h4
+      margin-left: 60px
+

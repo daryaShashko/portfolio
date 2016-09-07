@@ -1,10 +1,10 @@
 <section>
 
-    <h3>About Myself</h3>
+    <h3 id="about-me">About Myself</h3>
 
     <div class="face-lockup">
 
-        <div class="face-img"></div>
+        <div class="face-img" style="background-image: url(/assets/img/{{site.avatar}});"></div>
 
         <div class="icon-pencil">{% include icons/icon-pencil.html %}</div>
         <div class="icon-mouse">{% include icons/icon-mouse.html %}</div>
@@ -14,83 +14,27 @@
     </div>
 
     <div class="blurb">
-        <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</strong> A alias, aperiam dignissimos
-            dolore itaque nam nisi
-            placeat quasi qui quis recusandae, reprehenderit similique! Consequatur dolorem fugiat, porro recusandae
-            repellendus tempore.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae debitis eligendi error facere
-            fugiat id iusto magnam magni nesciunt, nihil nobis obcaecati officiis quas, similique, sint veritatis vero
-            voluptatem!
-        </p>
+        {{ site.data.portfolio.blurb | markdownify  }}
     </div>
+
+
 
     <div class="skill-lockup">
+
+        {% for skill in site.data.portfolio.skills %}
+
         <div class="skill-unit">
-            <div class="skill-label">Comunication</div>
-            <div class="skill-icons skill-10">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
+            <div class="skill-label">{{ skill.name }}</div>
+            <div class="skill-icons skill-{{ skill.value }}">
+                {% for i in (1..10) %}
+                <span></span>
+                {% endfor %}
             </div>
         </div>
 
-        <div class="skill-unit">
-            <div class="skill-label">Organization</div>
-            <div class="skill-icons skill-6">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <div class="skill-unit">
-            <div class="skill-label">Learning</div>
-            <div class="skill-icons skill-10">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <div class="skill-unit">
-            <div class="skill-label">Teaching</div>
-            <div class="skill-icons skill-6">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <div class="skill-unit">
-            <div class="skill-label">Planning</div>
-            <div class="skill-icons skill-9">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <div class="skill-unit">
-            <div class="skill-label">UX Desine</div>
-            <div class="skill-icons skill-2">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <div class="skill-unit">
-            <div class="skill-label">Programm</div>
-            <div class="skill-icons skill-3">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <div class="skill-unit">
-            <div class="skill-label">Loving</div>
-            <div class="skill-icons skill-8">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
-
+        {% endfor %}
 
     </div>
 
 
-</section>>
+</section>

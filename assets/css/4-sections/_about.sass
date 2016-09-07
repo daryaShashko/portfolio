@@ -5,7 +5,7 @@ h3
   padding: 100px 0 30px
 
 .face-lockup
-  min-width: 780px
+  max-width: 780px
   +display(flex)
   margin: 0 auto
   +align-items(center)
@@ -14,30 +14,33 @@ h3
   .face-img
     +size(200px)
     border-radius: 50%
-    background: url(../img/travitar.jpg)
-    order: 3
+    +order(3)
 
   [class^="icon-"]
     +size(100px)
     background: $bgcolor
     border-radius: 50%
 
+    svg
+      max-width: 100px
+
     path
       fill: $accent
 
     &.icon-pencil
-      order: 1
+      +order(1)
 
     &.icon-mouse
-      order: 2
+      +order(2)
 
     &.icon-browser
-      order: 4
+      +order(4)
 
     &.icon-video
-      order: 5
+      +order(5)
 
-@media screen and (max-width: 790px)
+
+@media screen and (max-width: 800px)
   .face-lockup
     display: block
     text-align: center
@@ -57,33 +60,35 @@ h3
 
 
 
+
+
 .blurb
   max-width: 620px
-  padding: 0 15px
+  padding: 0 20px
   margin: 50px auto
   font-size: 24px
   text-align: center
   font-weight: 300
 
 .skill-lockup
-  max-width: 700px
+  max-width: 540px
   margin: 100px auto
   color: #999999
   +clearfix
 
   .skill-unit
-    width: 350px
+    width: 270px
     float: left
 
   .skill-icons
     font-size: 0
-    margin: 0 0 30px
+    margin: 3px 0 30px
 
     span
       display: inline-block
       +size(14px)
       background-color: $accent
-      margin-right: 5px
+      margin-right: 8px
       border-radius: 50%
 
       &:after
@@ -101,7 +106,10 @@ h3
 
 @media screen and (max-width: 760px)
   .skill-lockup
-    width: 270px
+    width: 220px
+
+    .skill-unit
+      width: 220px
 
 %skill-color
   background: $bgcolor

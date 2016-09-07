@@ -23,6 +23,17 @@ h1, h2, h3, h4, h5, h6
   font-size: 26px
   line-height: 1.38
 
+h3
+  @extend %small-bold
+  color: $accent-light
+  text-align: center
+  padding: 100px 0 30px
+
+@media screen and (max-width)
+  h3
+    padding: 50px 0 50px
+
+
 .big, h4
   font-size: 22px
   line-height: 1.38
